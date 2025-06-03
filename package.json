@@ -1,0 +1,11 @@
+{
+  "name": "deploily-ui-components",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "antd": "^5.25.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
