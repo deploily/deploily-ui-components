@@ -1,6 +1,6 @@
 'use client';
-import { Radio, Typography, Card, Row, Col } from 'antd';
-import { useState, useEffect } from 'react';
+import { Card, Col, Radio, Row, Typography } from 'antd';
+import { useEffect, useState } from 'react';
 
 const { Title, Text } = Typography;
 
@@ -29,16 +29,25 @@ export default function SubscriptionDurationSelector({
         if (onChange) onChange(value);
     }, [value]);
 
+    const typographyStyle = {
+        fontFamily: "Inter, sans-serif",
+        fontWeight: 300,
+        fontSize: "16px",
+        lineHeight: "24px",
+        letterSpacing: "0.01em",
+        color: "#FF6600"
+    }
+
     return (
         <div
             style={{
                 background: '#1f1f1f',
                 padding: '20px',
                 borderRadius: '10px',
-                maxWidth: 600,
+                maxWidth: 500,
             }}
         >
-            <Title level={5} style={{ color: 'orange', marginBottom: 20 }}>
+            <Title level={5} style={typographyStyle}>
                 {title}
             </Title>
             <Radio.Group
@@ -49,34 +58,42 @@ export default function SubscriptionDurationSelector({
                 <Row gutter={[16, 16]}>
                     {options.map((opt) => (
                         <Col xs={12} sm={12} md={6} key={opt.value}>
-                            <Radio.Button
-                                value={opt.value}
+                            <Card
                                 style={{
                                     display: 'block',
                                     padding: 0,
                                     border: 'none',
                                     width: '100%',
                                     height: '100%',
-                                }}
-                            >
-                                <Card
-                                    bodyStyle={{
+                                    borderRadius: '0 0 0px 0px',
+                                    textAlign: 'center',
+                                }
+                                }
+                                styles={{
+                                    body: {
                                         padding: '12px',
                                         textAlign: 'center',
-                                        background: value === opt.value ? '#2b2b2b' : '#3a3a3a',
-                                        border:
-                                            value === opt.value ? '2px solid orange' : '1px solid #555',
-                                        borderRadius: '8px',
+                                        background: "#7D7D7D", borderRadius: '0 0 0px 0px',
+
+                                    }
+                                }}
+                            >
+                                <Radio
+                                    value={opt.value}
+                                    style={{
+                                        display: 'block',
+                                        width: '100%',
+                                        color: opt.value === value ? '#f97316' : '#ccc',
                                     }}
                                 >
                                     <Text style={{ color: '#fff', display: 'block', marginBottom: 4 }}>
                                         {opt.label}
                                     </Text>
-                                    <Text style={{ color: '#fff', fontWeight: 'bold' }}>
-                                        {opt.price}
-                                    </Text>
-                                </Card>
-                            </Radio.Button>
+                                </Radio>
+                                <Text style={{ color: '#fff', fontWeight: 'bold' }}>
+                                    {opt.price}
+                                </Text>
+                            </Card>
                         </Col>
                     ))}
                 </Row>
