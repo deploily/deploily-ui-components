@@ -4,4 +4,6 @@ export { default as ApplicationDescription } from './components/applications/app
 export type { SubscriptionOption } from './components/applications/subscriptionDurationSelector';
 export { default as MediasCarousel } from './components/applications/mediasCarousel';
 export { default as Rating } from './components/applications/rating';
-export type { Media } from './components/applications/mediasCarousel';
+export { default as DetailsCollapse } from './components/applications/detailsCollapse';
+export { default as OptionsCollapse } from './components/applications/optionsCollapse';
+export type { OptionItem } from './components/applications/optionsCollapse';

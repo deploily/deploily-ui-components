@@ -23,7 +23,7 @@ export default function Rating({
 
     return (
         <Row justify="space-between" align="middle" style={{  maxWidth: 500 }}>
-            <Rate value={ratingValue} disabled />
+            <Rate value={ratingValue} disabled  />
             <span style={typographyStyle}>{ratingValue}</span>
         </Row>
     );
