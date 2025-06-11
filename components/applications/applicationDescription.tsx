@@ -20,11 +20,10 @@ export default function ApplicationDescription({
         <Card
             style={{
                 background: 'transparent',
-                padding: '20px',
+                padding: '0px',
                 borderRadius: '10px',
                 maxWidth: 600,
                 color: '#fff',
-                
             }}
           
         >
