@@ -31,7 +31,7 @@ export default function OptionsCollapse({ title, options, selectedOption, onChan
             items={[{
                 key: title,
                 label: (
-                    <Typography.Title level={3} style={{ fontWeight: 700, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', color: theme.useToken().token.colorPrimary }}>
+                    <Typography.Title level={3} style={{ fontWeight: 300, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', color: theme.useToken().token.colorWhite }}>
                         {title}
                     </Typography.Title>
                 ),

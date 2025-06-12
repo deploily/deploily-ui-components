@@ -30,7 +30,6 @@ export default function SubscriptionDurationSelector({
     }, [value]);
 
     const typographyStyle = {
-        fontFamily: "Inter, sans-serif",
         fontWeight: 300,
         fontSize: "16px",
         lineHeight: "24px",

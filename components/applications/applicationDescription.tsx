@@ -31,7 +31,6 @@ export default function ApplicationDescription({
                 avatar={<Avatar src={logo} style={{ width: 50, height: 50 }} />}
                 style={{ alignContent: 'center' }}
                 title={<Text style={{
-                    fontFamily: "Inter, sans-serif",
                     fontWeight: 700,
                     fontSize: "30px",
                     lineHeight: "28px",

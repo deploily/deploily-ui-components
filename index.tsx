@@ -6,4 +6,5 @@ export { default as MediasCarousel } from './components/applications/mediasCarou
 export { default as Rating } from './components/applications/rating';
 export { default as DetailsCollapse } from './components/applications/detailsCollapse';
 export { default as OptionsCollapse } from './components/applications/optionsCollapse';
+export { default as PlanCard } from './components/applications/planCard';
 export type { OptionItem } from './components/applications/optionsCollapse';
