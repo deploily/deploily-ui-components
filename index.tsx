@@ -1,4 +1,3 @@
-export { default as Button } from './components/Button';
 export { default as SubscriptionDurationSelector } from './components/applications/subscriptionDurationSelector';
 export { default as ApplicationDescription } from './components/applications/applicationDescription';
 export type { SubscriptionOption } from './components/applications/subscriptionDurationSelector';
@@ -8,3 +7,6 @@ export { default as DetailsCollapse } from './components/applications/detailsCol
 export { default as OptionsCollapse } from './components/applications/optionsCollapse';
 export { default as PlanCard } from './components/applications/planCard';
 export type { OptionItem } from './components/applications/optionsCollapse';
+export type { Column } from './components/applications/tableComponentWithSelection';
+export { default as TableComponentWithSelection } from './components/applications/tableComponentWithSelection';
+export { default as PaymentSideBar } from './components/applications/paymentSideBar';
