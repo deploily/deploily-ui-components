@@ -1,5 +1,5 @@
 'use client';
-import { Avatar, Card, Typography } from 'antd';
+import { Card, Typography } from 'antd';
 
 const { Title, Text } = Typography;
 const { Meta } = Card;
@@ -7,35 +7,37 @@ const { Meta } = Card;
 interface Props {
     title: string;
     description: string;
-    logo: string;
+    avatar: React.ReactNode;
 }
 
 export default function ApplicationDescription({
     title,
     description,
-    logo,
+    avatar,
 }: Props) {
+
 
     return (
         <Card
             style={{
                 background: 'transparent',
                 padding: '0px',
-                borderRadius: '10px',
+                border:"none",
                 maxWidth: 600,
                 color: '#fff',
             }}
-          
+
         >
             <Meta
-                avatar={<Avatar src={logo} style={{ width: 50, height: 50 }} />}
-                style={{ alignContent: 'center' }}
+                avatar={avatar}
+                style={{ alignContent: 'center', alignItems: "center" }}
                 title={<Text style={{
                     fontWeight: 700,
                     fontSize: "30px",
                     lineHeight: "28px",
                     letterSpacing: "0.01em",
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    color: "white"
                 }}>{title}
                 </Text>}
 
@@ -43,12 +45,13 @@ export default function ApplicationDescription({
             />
             <Typography.Paragraph style={{
                 marginTop: "40px",
-                fontFamily: "Inter",
                 fontWeight: "500",
                 fontSize: "14px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
                 textAlign: "justify",
+                color: "white"
+
             }}>
                 {description}
             </Typography.Paragraph>

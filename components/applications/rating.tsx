@@ -1,5 +1,6 @@
 'use client';
 import { Rate, Row, Typography } from 'antd';
+import './customRating.css';
 
 const { Title, Text } = Typography;
 
@@ -23,7 +24,7 @@ export default function Rating({
 
     return (
         <Row justify="space-between" align="middle" style={{  maxWidth: 500 }}>
-            <Rate value={ratingValue} disabled  />
+            <Rate value={ratingValue} disabled className="custom-rating" />
             <span style={typographyStyle}>{ratingValue}</span>
         </Row>
     );

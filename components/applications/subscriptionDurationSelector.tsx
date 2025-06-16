@@ -6,7 +6,6 @@ const { Title, Text } = Typography;
 
 export interface SubscriptionOption {
     label: string;
-    price: string;
     value: string;
 }
 
@@ -52,46 +51,47 @@ export default function SubscriptionDurationSelector({
             <Radio.Group
                 onChange={(e) => setValue(e.target.value)}
                 value={value}
-                style={{ width: '100%' }}
+                style={{ width: '100%', margin: "0px" }}
             >
                 <Row gutter={[16, 16]}>
                     {options.map((opt) => (
-                        <Col xs={12} sm={12} md={6} key={opt.value}>
+                        <Col >
                             <Card
                                 style={{
                                     display: 'block',
-                                    padding: 0,
                                     border: 'none',
-                                    width: '100%',
-                                    height: '100%',
+                                    width: '95px',
                                     borderRadius: '0 0 0px 0px',
+                                    margin: '0 0 0px 0px',
                                     textAlign: 'center',
+                                    background: "#7D7D7D",
+                                    alignItems: 'center'
                                 }
                                 }
                                 styles={{
                                     body: {
-                                        padding: '12px',
+                                        padding: '1px',
+                                        paddingTop:"5px",
+                                        paddingBottom:"5px",
                                         textAlign: 'center',
-                                        background: "#7D7D7D", borderRadius: '0 0 0px 0px',
-
+                                        height: "100%",
+                                        alignContent: "center"
                                     }
                                 }}
                             >
                                 <Radio
                                     value={opt.value}
                                     style={{
-                                        display: 'block',
-                                        width: '100%',
                                         color: opt.value === value ? '#f97316' : '#ccc',
+                                        paddingBottom: '5px'
                                     }}
                                 >
-                                    <Text style={{ color: '#fff', display: 'block', marginBottom: 4 }}>
+                                    <Text style={{ color: '#fff', fontSize: '12px', fontWeight: 400 }}>
                                         {opt.label}
                                     </Text>
                                 </Radio>
-                                <Text style={{ color: '#fff', fontWeight: 'bold' }}>
-                                    {opt.price}
-                                </Text>
+
+
                             </Card>
                         </Col>
                     ))}

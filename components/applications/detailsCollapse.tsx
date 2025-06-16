@@ -1,7 +1,11 @@
 "use client";
 import { CaretDown, CaretUp } from "@phosphor-icons/react";
 import { Collapse, theme, Typography } from "antd";
-export default function DetailsCollapse({ items, style }: { items?: any[] | undefined, style?: React.CSSProperties }) {
+export interface CollapseItem {
+    label: string,
+    children: string
+}
+export default function DetailsCollapse({ items, style }: { items?: CollapseItem[] | undefined, style?: React.CSSProperties }) {
     const { token } = theme.useToken();
     return (
         <Collapse

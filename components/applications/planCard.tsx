@@ -5,19 +5,22 @@ const { Text } = Typography;
 const { Meta } = Card;
 
 export interface Props {
+    id:number;
     title: string;
     options: {
         id: number;
         icon: string;
         html_content: string;
     }[];
+    onClick:any
 }
 
 export default function PlanCard({
+    id,
     title,
-    options
+    options,
+    onClick
 }: Props) {
-console.log("PlanCard rendered with title:", title);
 
     return (
         <Card
@@ -28,6 +31,7 @@ console.log("PlanCard rendered with title:", title);
                 border: "none",
                 maxWidth: "250px",
             }}
+            onClick={()=>onClick(id)}
         >
             <Typography.Title level={3} style={{ textAlign: "center" ,color: '#FF6600', fontWeight: 300, fontSize: '16px'}}>
                 {title}
