@@ -1,5 +1,5 @@
 'use client';
-import { Button, Card, Col, theme, Typography } from 'antd';
+import { Button, Card, Divider, Typography } from 'antd';
 
 const { Text } = Typography;
 const { Meta } = Card;
@@ -21,15 +21,39 @@ export default function PaymentSideBar({
     return (
         <Card
             style={{
-                background: theme.useToken().token.colorBgContainer,
-                padding: '20px',
+                maxWidth: "280px",
+                background: '#202227',
                 borderRadius: '10px',
                 border: "none",
-                maxWidth: "280px",
+                color: 'white',
             }}
-            cover={<PaymentDetails items={items} />}
+            bodyStyle={{ padding: 20 }}
         >
-            <Meta title={`${price}`} description={<Button onClick={onClick}>{buttonText}</Button>} />
+            <div style={{ color: '#ffffff' }}>
+                <PaymentDetails items={items} />
+                <Divider style={{ margin: '16px 0', borderColor: '#1890ff' }} />
+
+                <div style={{ textAlign: 'center' }}>
+                    <Typography.Title level={2} style={{ color: '#F47B20', margin: 0 }}>
+                        11800 <Text style={{ fontSize: 16, color: '#F47B20', }}>DZD</Text>
+                    </Typography.Title>
+
+                    <Button
+                        type="primary"
+                        size="large"
+                        style={{
+                            marginTop: 12,
+                            backgroundColor: '#F47B20',
+                            borderColor: '#F47B20',
+                            fontWeight: 'bold',
+                            fontSize: 16,
+                            borderRadius: 8,
+                        }}
+                    >
+                        Confirm
+                    </Button>
+                </div>
+            </div>
         </Card>
     );
 }
@@ -42,14 +66,15 @@ function PaymentDetails({ items }: {
     }[]
 }) {
     return <>
-        {items.map((item, index) => <Col key={index}>
-            <Text style={{ fontSize: '14px', fontWeight: 700 }}>
-                {item.label}
-            </Text>
-            <Text style={{ fontSize: '12px', fontWeight: 400 }}>
-                {item.value}
-            </Text>
-        </Col>)}
-
+        {items.map((item, index) =>
+            <div style={{padding:"5px"}}>
+                <Text style={{ fontSize: '14px', fontWeight: 700, color: "white", width: '100%' }}>
+                    {item.label}
+                </Text>
+              <div>   <Text style={{ fontSize: '12px', fontWeight: 400, color: "white", width: '100%' }}>
+                    {item.value}
+                </Text></div>
+            </div>
+        )}
     </>
 }

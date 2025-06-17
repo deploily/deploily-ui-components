@@ -1,21 +1,20 @@
 import { Table } from 'antd';
-
-export interface Column{
+import './TableDesign.module.css';
+export interface Column {
     title: string;
-    dataIndex:string ,
-    render?: (text: string) => React.ReactNode;
+    dataIndex: string,
+    render?: (text: any) => React.ReactNode;
 };
 
 
-export default function TableComponentWithSelection({ data, columns, onChange }: { data: any[], columns: Column[], onChange: (value: any) => void })  {
+export default function TableComponentWithSelection({ data, columns, onChange }: { data: [], columns: Column[], onChange: (value: any) => void }) {
     return (
-        <div>
-            <Table<any>
-                rowSelection={{ type: "radio",onChange:onChange }}
-                columns={columns}
-                dataSource={data}
-            />
-        </div>
+        <Table<any>
+            className={"myTable"}
+            rowSelection={{ type: "radio", onChange: (selectedRowKeys: React.Key[], selectedRows: any[]) => onChange(selectedRows[0]) }}
+            columns={columns}
+            dataSource={data}
+        />
     );
 };
 
