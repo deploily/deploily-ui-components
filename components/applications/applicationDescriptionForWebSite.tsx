@@ -23,7 +23,7 @@ export default function ApplicationDescription({
                 background: 'transparent',
                 padding: '0px',
                 border:"none",
-                maxWidth: 600,
+                width: "100%",
                 color: '#fff',
             }}
 

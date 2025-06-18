@@ -42,10 +42,10 @@ export default function SubscriptionDurationSelector({
                 background: '#1f1f1f',
                 padding: '20px',
                 borderRadius: '10px',
-                maxWidth: 500,
+                width: '100%',
             }}
         >
-            <Title level={5} style={typographyStyle}>
+            <Title style={typographyStyle}>
                 {title}
             </Title>
             <Radio.Group
@@ -53,14 +53,14 @@ export default function SubscriptionDurationSelector({
                 value={value}
                 style={{ width: '100%', margin: "0px" }}
             >
-                <Row gutter={[16, 16]}>
+                <Row  justify="space-evenly" style={{}}>
                     {options.map((opt) => (
                         <Col >
                             <Card
                                 style={{
                                     display: 'block',
                                     border: 'none',
-                                    width: '95px',
+                                    width: '120px',
                                     borderRadius: '0 0 0px 0px',
                                     margin: '0 0 0px 0px',
                                     textAlign: 'center',
@@ -71,8 +71,8 @@ export default function SubscriptionDurationSelector({
                                 styles={{
                                     body: {
                                         padding: '1px',
-                                        paddingTop:"5px",
-                                        paddingBottom:"5px",
+                                        paddingTop: "5px",
+                                        paddingBottom: "5px",
                                         textAlign: 'center',
                                         height: "100%",
                                         alignContent: "center"

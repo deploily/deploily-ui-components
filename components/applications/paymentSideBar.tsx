@@ -17,7 +17,6 @@ export interface Props {
 export default function PaymentSideBar({
     price, buttonText, items, onClick
 }: Props) {
-
     return (
         <Card
             style={{
@@ -35,7 +34,7 @@ export default function PaymentSideBar({
 
                 <div style={{ textAlign: 'center' }}>
                     <Typography.Title level={2} style={{ color: '#F47B20', margin: 0 }}>
-                        11800 <Text style={{ fontSize: 16, color: '#F47B20', }}>DZD</Text>
+                        {price} <Text style={{ fontSize: 16, color: '#F47B20', }}>DZD</Text>
                     </Typography.Title>
 
                     <Button
@@ -49,8 +48,9 @@ export default function PaymentSideBar({
                             fontSize: 16,
                             borderRadius: 8,
                         }}
+                        onClick={() => onClick()}
                     >
-                        Confirm
+                        {buttonText}
                     </Button>
                 </div>
             </div>
@@ -67,11 +67,11 @@ function PaymentDetails({ items }: {
 }) {
     return <>
         {items.map((item, index) =>
-            <div style={{padding:"5px"}}>
+            <div style={{ padding: "5px" }}>
                 <Text style={{ fontSize: '14px', fontWeight: 700, color: "white", width: '100%' }}>
                     {item.label}
                 </Text>
-              <div>   <Text style={{ fontSize: '12px', fontWeight: 400, color: "white", width: '100%' }}>
+                <div>   <Text style={{ fontSize: '12px', fontWeight: 400, color: "white", width: '100%' }}>
                     {item.value}
                 </Text></div>
             </div>

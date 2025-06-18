@@ -26,7 +26,7 @@ export default function OptionsCollapse({ title, options, selectedOption, onChan
             style={{
                 borderRadius: '8px',
                 backgroundColor: '#202227', //darkGrey
-                maxWidth: '500px',
+                width: '100%',
             }}
             items={[{
                 key: title,
