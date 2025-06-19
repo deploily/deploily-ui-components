@@ -10,7 +10,7 @@ interface Props {
     avatar: React.ReactNode;
 }
 
-export default function ApplicationDescription({
+export default function ApplicationDescriptionForWebSite({
     title,
     description,
     avatar,

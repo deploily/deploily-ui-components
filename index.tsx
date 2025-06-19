@@ -1,5 +1,6 @@
-export { default as PaymentDrawer } from '../src/app/[locale]/(auth)/portal/application/[id]/containers/paymentDrawer';
-export { default as ApplicationDescription } from './components/applications/applicationDescriptionForWebSite';
+export { default as PaymentDrawer } from '../src/app/[locale]/(auth)/portal/application/[id]/containers/payment-components/paymentDrawer';
+export { default as ApplicationDescriptionForWebSite } from './components/applications/applicationDescriptionForWebSite';
+export { default as ApplicationDescriptionForConsole } from './components/applications/applicationDescriptionForConsole';
 export { default as DetailsCollapse } from './components/applications/detailsCollapse';
 export { default as MediasCarousel } from './components/applications/mediasCarousel';
 export { default as OptionsCollapse } from './components/applications/optionsCollapse';
@@ -11,3 +12,4 @@ export { default as SubscriptionDurationSelector } from './components/applicatio
 export type { SubscriptionOption } from './components/applications/subscriptionDurationSelector';
 export { default as TableComponentWithSelection } from './components/applications/tableComponentWithSelection';
 export type { Column } from './components/applications/tableComponentWithSelection';
+

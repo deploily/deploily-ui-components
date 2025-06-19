@@ -33,7 +33,6 @@ export interface NewSubscriptionInfoInterface {
 }
 
 export default function NewSubscriptionInfo({ title, newSubscriptionInfo }: { title: string, newSubscriptionInfo: NewSubscriptionInfoInterface }) {
-    console.log(newSubscriptionInfo);
 
     return (
         <>

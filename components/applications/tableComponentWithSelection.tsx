@@ -1,4 +1,5 @@
 import { Table } from 'antd';
+import { useState } from 'react';
 import './TableDesign.module.css';
 export interface Column {
     title: string;
@@ -7,11 +8,21 @@ export interface Column {
 };
 
 
-export default function TableComponentWithSelection({ data, columns, onChange }: { data: [], columns: Column[], onChange: (value: any) => void }) {
+export default function TableComponentWithSelection({ selectedRowId, data, columns, onChange }: { selectedRowId: number | undefined, data: [], columns: Column[], onChange: (value: any) => void }) {
+    const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>(selectedRowId ? [selectedRowId] : []);
+
+
     return (
         <Table<any>
             className={"myTable"}
-            rowSelection={{ type: "radio", onChange: (selectedRowKeys: React.Key[], selectedRows: any[]) => onChange(selectedRows[0]) }}
+            rowSelection={{
+                type: "radio",
+                onChange: (newSelectedRowKeys: React.Key[]) => {
+                    setSelectedRowKeys(newSelectedRowKeys);
+                    onChange(newSelectedRowKeys[0]);
+                },
+                selectedRowKeys
+            }}
             columns={columns}
             dataSource={data}
         />
