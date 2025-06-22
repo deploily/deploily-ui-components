@@ -1,5 +1,6 @@
 'use client';
 import { Button, Card, Divider, Typography } from 'antd';
+import React from 'react';
 
 const { Text } = Typography;
 const { Meta } = Card;
@@ -9,7 +10,7 @@ export interface Props {
     buttonText: string;
     items: {
         label: string;
-        value: string;
+        value: any;
     }[];
     onClick: any
 }
@@ -62,18 +63,23 @@ export default function PaymentSideBar({
 function PaymentDetails({ items }: {
     items: {
         label: string;
-        value: string;
+        value: any;
     }[]
 }) {
     return <>
         {items.map((item, index) =>
-            <div style={{ padding: "5px" }}>
+            <div style={{ padding: "5px" }} key={index}>
                 <Text style={{ fontSize: '14px', fontWeight: 700, color: "white", width: '100%' }}>
                     {item.label}
                 </Text>
-                <div>   <Text style={{ fontSize: '12px', fontWeight: 400, color: "white", width: '100%' }}>
-                    {item.value}
-                </Text></div>
+                <div>
+                {
+                    React.isValidElement(item.value)? item.value :
+                        <Text style={{ fontSize: '12px', fontWeight: 400, color: "white", width: '100%' }}>
+                            {item.value}
+                        </Text>
+                }
+                </div>
             </div>
         )}
     </>
