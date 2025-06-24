@@ -5,6 +5,9 @@ export interface Column {
     title: string;
     dataIndex: string,
     render?: (text: any) => React.ReactNode;
+    fixed?: 'left' | 'right';
+    width?: number | string;
+    
 };
 
 
@@ -25,6 +28,8 @@ export default function TableComponentWithSelection({ selectedRowId, data, colum
             }}
             columns={columns}
             dataSource={data}
+            scroll={{ x: 'max-content' }}
+
         />
     );
 };
