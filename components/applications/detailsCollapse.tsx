@@ -27,7 +27,7 @@ export default function DetailsCollapse({ items, style }: { items?: CollapseItem
                     </Typography.Title>
                 ),
                 children: (
-                    <Typography.Paragraph style={{ fontWeight: 400, fontSize: '12px', lineHeight: '24px', letterSpacing: '0%', color: "white" }}>
+                    <Typography.Paragraph style={{ fontWeight: 400, fontSize: '14px', lineHeight: '24px', letterSpacing: '0%', color: "white" }}>
                         {item.children}
                     </Typography.Paragraph>
                 ),

@@ -38,7 +38,9 @@ export default function PlanCard({
                 height: "100%",
                 width: "100%",
                 borderColor: token.colorBorder,
-                boxShadow: "none"
+                boxShadow: "none",
+                minWidth: 250,
+                maxWidth: 300,
             }}
             styles={{
                 body: { flex: 1, display: "flex", flexDirection: "column", paddingBottom: 0 },

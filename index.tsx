@@ -1,4 +1,3 @@
-export { default as PaymentDrawer } from '../src/app/[locale]/(auth)/portal/application/[id]/containers/payment-components/paymentDrawer';
 export { default as ApplicationDescriptionForWebSite } from './components/applications/applicationDescriptionForWebSite';
 export { default as ApplicationDescriptionForConsole } from './components/applications/applicationDescriptionForConsole';
 export { default as DetailsCollapse } from './components/applications/detailsCollapse';

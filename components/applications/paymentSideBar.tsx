@@ -42,6 +42,7 @@ export default function PaymentSideBar({
                         type="primary"
                         size="large"
                         style={{
+                            boxShadow:"none",
                             marginTop: 12,
                             backgroundColor: '#F47B20',
                             borderColor: '#F47B20',
