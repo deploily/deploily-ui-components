@@ -60,6 +60,61 @@ export default function PaymentSideBar({
     );
 }
 
+export  function PaymentAppBar({
+    price, buttonText, items, onClick
+}: Props) {
+    return (
+        <div
+            style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                // paddingInline: 16,
+            }}
+        >
+            <Card
+                style={{
+                    width: "100%",
+                    maxWidth: 1000,
+                    background: '#202227',
+                    borderRadius: '10px',
+                    border: "none",
+                    color: 'white',
+                }}
+                bodyStyle={{ padding: 20 }}
+            >
+                <div>
+                    <PaymentDetails items={items} />
+
+                    <div style={{ textAlign: 'center' }}>
+                        <Typography.Title level={2} style={{ color: '#F47B20', margin: 0 }}>
+                            {price} <Text style={{ fontSize: 16, color: '#F47B20' }}>DZD</Text>
+                        </Typography.Title>
+
+                        <Button
+                            type="primary"
+                            size="large"
+                            style={{
+                                boxShadow: "none",
+                                marginTop: 12,
+                                backgroundColor: '#F47B20',
+                                borderColor: '#F47B20',
+                                fontWeight: 'bold',
+                                fontSize: 16,
+                                borderRadius: 8,
+                                width: "100%",
+                            }}
+                            onClick={onClick}
+                        >
+                            {buttonText}
+                        </Button>
+                    </div>
+                </div>
+            </Card>
+        </div>
+    );
+}
+
 
 function PaymentDetails({ items }: {
     items: {
