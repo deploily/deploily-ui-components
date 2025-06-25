@@ -20,7 +20,7 @@ export default function SelectProfileComponent({ translations, selectedProfile, 
                         }
                     }
                 }}>
-                    {selectedProfile !== undefined && <Select
+                    {<Select
                         defaultValue={selectedProfile?.id}
                         style={{ width: "100%" }}
                         dropdownRender={(menu) => (
