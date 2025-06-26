@@ -39,7 +39,7 @@ export default function PlanCard({
                 width: "100%",
                 borderColor: token.colorBorder,
                 boxShadow: "none",
-                minWidth: 250,
+                minWidth: 220,
                 maxWidth: 300,
             }}
             styles={{
