@@ -14,6 +14,10 @@ export interface NewSubscriptionInfoInterface {
         label: string;
         value: string
     };
+    version: {
+        label: string;
+        value: string
+    };
     providerName: {
         label: string;
         value: string
@@ -55,6 +59,9 @@ export default function NewSubscriptionInfo({ title, newSubscriptionInfo }: { ti
                     </Row>
                     <Row gutter={16} align="top" >
                         <Item label={newSubscriptionInfo.duration.label} value={newSubscriptionInfo.duration.value} />
+                    </Row>
+                    <Row gutter={16} align="top" >
+                        <Item label={newSubscriptionInfo.version.label} value={newSubscriptionInfo.version.value} />
                     </Row>
                     <Row gutter={16} align="top" >
                         <Item label={newSubscriptionInfo.providerName.label} value={newSubscriptionInfo.providerName.value} />

@@ -1,14 +1,14 @@
 'use client';
 
 import { HeartStraight } from '@phosphor-icons/react';
-import { Badge, Button, Col, Row, Typography } from 'antd';
+import { Badge, Button, Col, Row, Space, Typography } from 'antd';
 
 const { Text, Paragraph } = Typography;
 
 interface Props {
     title: string;
     description: string;
-    price?: number;
+    price: number;
     avatar: React.ReactNode;
 }
 
@@ -25,7 +25,7 @@ export default function ApplicationDescriptionForConsole({
         }} >
             <Col
                 xs={24} md={24} xl={8}
-                style={{ display: "flex", justifyContent: "start"  }}
+                style={{ display: "flex", justifyContent: "start" }}
             >
                 <Badge
                     count={
@@ -47,34 +47,60 @@ export default function ApplicationDescriptionForConsole({
                 >
                     {avatar}
                 </Badge>
-            </Col>
-
+            </Col>  
+            
             <Col
-                xs={24} md={24} xl={16} 
+                xs={24}
+                md={24}
+                xl={16}
                 style={{
-                    flexDirection: "column", justifyContent: "start",
-                        // paddingLeft: window.innerWidth >= 700 ? '30px' : '0px',
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "start",
                 }}
             >
-                <Text style={{ fontWeight: 700, fontSize: 24, lineHeight: '28px' }}>{title}</Text>
-                {price !== undefined && (
-                    <Text style={{ fontWeight: 700, fontSize: 24, lineHeight: '28px', marginTop: 4 }}>
-                        {price} DZD
+                <Text style={{ fontWeight: 700, fontSize: 24, lineHeight: "28px" }}>{title}</Text>
+
+                <Space direction="horizontal" size={8} style={{ marginTop: 8 }}>
+                    <Text
+                        style={{
+                            color: "white",
+                            fontSize: "14px",
+                            fontWeight: 400,
+                            letterSpacing: "0.5px",
+                        }}
+                    >
+                        From
                     </Text>
-                )}
+
+                    <Paragraph
+                        style={{
+                            color: "#D85912",
+                            fontSize: 16,
+                            margin: 0,
+                            fontWeight: 600,
+                        }}
+                    >
+                        {Intl.NumberFormat("fr-FR", {
+                            useGrouping: true,
+                        }).format(price)}{" "}
+                        DZD
+                    </Paragraph>
+                </Space>
+
                 <Paragraph
                     style={{
                         marginTop: 20,
                         fontWeight: 500,
                         fontSize: 14,
-                        textAlign: 'justify',
+                        textAlign: "justify",
                     }}
                 >
                     {description}
                 </Paragraph>
             </Col>
         </Row>
-      
-      
+
+
     );
 }
