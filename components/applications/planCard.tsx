@@ -37,21 +37,13 @@ export default function PlanCard({
                 flexDirection: "column",
                 height: "100%",
                 width: "100%",
-                borderColor: token.colorBorder,
-                boxShadow: "none",
+                borderColor: styles.color ?? 'grey',
+                boxShadow:styles.boxShadow,
                 minWidth: 220,
                 maxWidth: 300,
             }}
             styles={{
                 body: { flex: 1, display: "flex", flexDirection: "column", paddingBottom: 0 },
-            }}
-            onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = styles.color ??token.colorPrimary;
-                e.currentTarget.style.boxShadow = styles.boxShadow ?? `4px 4px 10px 0px grey`;
-            }}
-            onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "grey";
-                e.currentTarget.style.boxShadow = "none";
             }}
         >
 
