@@ -19,7 +19,7 @@ export default function ApplicationDescriptionForConsole({
     avatar,
 }: Props) {
     return (
-        <Row gutter={[16, 16]} wrap style={{
+        <Row gutter={[16, 24]} wrap style={{
             display: 'flex',
             flexWrap: 'wrap',
         }} >
