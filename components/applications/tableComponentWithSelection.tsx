@@ -7,30 +7,36 @@ export interface Column {
     render?: (text: any) => React.ReactNode;
     fixed?: 'left' | 'right';
     width?: number | string;
-    
+
 };
 
 
-export default function TableComponentWithSelection({ selectedRowId, data, columns, onChange }: { selectedRowId: number | undefined, data: [], columns: Column[], onChange: (value: any) => void }) {
+export default function TableComponentWithSelection({ selectedRowId, data, columns, onChange, pagination, onChangeTable }:
+    {
+        selectedRowId: number | undefined, data: [], columns: Column[],
+        onChange: (value: any) => void, pagination: any, onChangeTable: any
+    }) {
     const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>(selectedRowId ? [selectedRowId] : []);
 
-
     return (
-        <Table<any>
-            className={"myTable"}
-            rowSelection={{
-                type: "radio",
-                onChange: (newSelectedRowKeys: React.Key[]) => {
-                    setSelectedRowKeys(newSelectedRowKeys);
-                    onChange(newSelectedRowKeys[0]);
-                },
-                selectedRowKeys
-            }}
-            columns={columns}
-            dataSource={data}
-            scroll={{ x: 'max-content' }}
+        <div>
+            <Table<any>
+                className={"myTable"}
+                rowSelection={{
+                    type: "radio",
+                    onChange: (newSelectedRowKeys: React.Key[]) => {
+                        setSelectedRowKeys(newSelectedRowKeys);
+                        onChange(newSelectedRowKeys[0]);
+                    },
+                    selectedRowKeys
+                }}
+                scroll={{ x: 730, y: 400 }}
+                columns={columns}
+                dataSource={data}
+                pagination={pagination}
+                onChange={onChangeTable}
+            /></div>
 
-        />
     );
 };
 
