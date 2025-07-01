@@ -31,6 +31,7 @@ export default function TableComponentWithSelection({ selectedRowId, data, colum
                     selectedRowKeys
                 }}
                 scroll={{ x: 730, y: 400 }}
+                pagination={false}
                 columns={columns}
                 dataSource={data}
             /></div>
