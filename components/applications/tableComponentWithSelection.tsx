@@ -11,10 +11,10 @@ export interface Column {
 };
 
 
-export default function TableComponentWithSelection({ selectedRowId, data, columns, onChange, pagination, onChangeTable }:
+export default function TableComponentWithSelection({ selectedRowId, data, columns, onChange }:
     {
         selectedRowId: number | undefined, data: [], columns: Column[],
-        onChange: (value: any) => void, pagination: any, onChangeTable: any
+        onChange: (value: any) => void
     }) {
     const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>(selectedRowId ? [selectedRowId] : []);
 
@@ -33,8 +33,6 @@ export default function TableComponentWithSelection({ selectedRowId, data, colum
                 scroll={{ x: 730, y: 400 }}
                 columns={columns}
                 dataSource={data}
-                pagination={pagination}
-                onChange={onChangeTable}
             /></div>
 
     );
