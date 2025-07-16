@@ -125,13 +125,13 @@ function PaymentDetails({ items }: {
     return <>
         {items.map((item, index) =>
             <div style={{ padding: "5px" }} key={index}>
-                <Text style={{ fontSize: '14px', fontWeight: 700, color: "white", width: '100%' }}>
+                <Text style={{ fontSize: '12px', fontWeight: 400, color: "white", width: '100%' }}>
                     {item.label}
                 </Text>
                 <div>
                 {
                     React.isValidElement(item.value)? item.value :
-                        <Text style={{ fontSize: '12px', fontWeight: 400, color: "white", width: '100%' }}>
+                        <Text style={{ fontSize: '14px', fontWeight: 700, color: "white", width: '100%' }}>
                             {item.value}
                         </Text>
                 }
