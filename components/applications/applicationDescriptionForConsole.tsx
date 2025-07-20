@@ -1,6 +1,7 @@
 'use client';
 
 import { HeartStraight } from '@phosphor-icons/react';
+import Link from "next/link";
 import { Badge, Button, Col, Row, Space, Typography } from 'antd';
 
 const { Text, Paragraph } = Typography;
@@ -8,6 +9,7 @@ const { Text, Paragraph } = Typography;
 interface Props {
     title: string;
     description: string;
+    documentationUrl: string;
     price: number;
     avatar: React.ReactNode;
 }
@@ -17,6 +19,7 @@ export default function ApplicationDescriptionForConsole({
     description,
     price,
     avatar,
+    documentationUrl,
 }: Props) {
     return (
         <Row gutter={[16, 24]} wrap style={{
@@ -47,8 +50,8 @@ export default function ApplicationDescriptionForConsole({
                 >
                     {avatar}
                 </Badge>
-            </Col>  
-            
+            </Col>
+
             <Col
                 xs={24}
                 md={24}
@@ -59,7 +62,20 @@ export default function ApplicationDescriptionForConsole({
                     justifyContent: "start",
                 }}
             >
-                <Text style={{ fontWeight: 700, fontSize: 24, lineHeight: "28px" }}>{title}</Text>
+                <Row justify={'space-between'}>
+                    <Text style={{ fontWeight: 700, fontSize: 24, lineHeight: "28px" }}>{title}</Text>
+                    <Link
+                        type="link"
+                        href={documentationUrl}
+                        target="_blank"
+                        style={{
+                            color: "#D85912", fontWeight: 500, textDecoration:"underline" 
+                        }}
+                    >
+                        Documentation
+                    </Link>
+                </Row>
+
 
                 <Space direction="horizontal" size={8} style={{ marginTop: 8 }}>
                     <Text

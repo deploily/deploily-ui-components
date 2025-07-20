@@ -34,6 +34,10 @@ export interface NewSubscriptionInfoInterface {
         label: string;
         value: string
     };
+     prepaTime: {
+        label: string;
+        value: string
+    };
 }
 
 export default function NewSubscriptionInfo({ title, newSubscriptionInfo }: { title: string, newSubscriptionInfo: NewSubscriptionInfoInterface }) {
@@ -71,6 +75,9 @@ export default function NewSubscriptionInfo({ title, newSubscriptionInfo }: { ti
                     </Row>
                     <Row gutter={16} align="top" >
                         <Item label={newSubscriptionInfo.resourcePlanOptions.label} value={newSubscriptionInfo.resourcePlanOptions.value} />
+                    </Row>  
+                    <Row gutter={16} align="top" >
+                        <Item label={newSubscriptionInfo.prepaTime.label} value={newSubscriptionInfo.prepaTime.value} />
                     </Row>
                     <Row gutter={16} align="top" >
                         <Col span={14} >  <Typography.Text strong style={{ color: "white" }} >{newSubscriptionInfo.totalAmount.label}</Typography.Text></Col>
@@ -93,8 +100,8 @@ export default function NewSubscriptionInfo({ title, newSubscriptionInfo }: { ti
 function Item({ label, value }: { label: string, value: string }) {
     return (
         < >
-            <Col span={14} >  <Typography.Text strong style={{ color: "white" }}>{label}</Typography.Text></Col>
-            <Col span={10} > <Typography.Text style={{ color: "white" }}>{value}</Typography.Text></Col>
+            <Col span={14} >  <Typography.Text  style={{ color: "white" }}>{label}</Typography.Text></Col>
+            <Col span={10} > <Typography.Text strong style={{ color: "white" }}>{value}</Typography.Text></Col>
         </>
     );
 }
