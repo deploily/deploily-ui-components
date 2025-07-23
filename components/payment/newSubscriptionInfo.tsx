@@ -37,6 +37,9 @@ export interface NewSubscriptionInfoInterface {
      prepaTime: {
         label: string;
         value: string
+    }; promoCode?: {
+        label: string;
+        value: string
     };
 }
 
@@ -78,7 +81,10 @@ export default function NewSubscriptionInfo({ title, newSubscriptionInfo }: { ti
                     </Row>  
                     <Row gutter={16} align="top" >
                         <Item label={newSubscriptionInfo.prepaTime.label} value={newSubscriptionInfo.prepaTime.value} />
-                    </Row>
+                    </Row> 
+                    {newSubscriptionInfo.promoCode &&<Row gutter={16} align="top" >
+                        <Item label={newSubscriptionInfo.promoCode.label} value={newSubscriptionInfo.promoCode.value} />
+                    </Row>}
                     <Row gutter={16} align="top" >
                         <Col span={14} >  <Typography.Text strong style={{ color: "white" }} >{newSubscriptionInfo.totalAmount.label}</Typography.Text></Col>
                         <Col span={10}>

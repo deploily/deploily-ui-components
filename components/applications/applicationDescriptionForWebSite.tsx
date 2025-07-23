@@ -1,19 +1,24 @@
 'use client';
 import { Card, Typography } from 'antd';
+import Link from 'next/link';
 
-const { Title, Text } = Typography;
+const { Title, Text, Paragraph } = Typography;
 const { Meta } = Card;
 
 interface Props {
     title: string;
     description: string;
     avatar: React.ReactNode;
+    documentationUrl: string;
+    documentationLabel: string;
 }
 
 export default function ApplicationDescriptionForWebSite({
     title,
     description,
     avatar,
+    documentationUrl,
+    documentationLabel,
 }: Props) {
 
 
@@ -22,7 +27,7 @@ export default function ApplicationDescriptionForWebSite({
             style={{
                 background: 'transparent',
                 padding: '0px',
-                border:"none",
+                border: "none",
                 width: "100%",
                 color: '#fff',
             }}
@@ -43,18 +48,26 @@ export default function ApplicationDescriptionForWebSite({
 
 
             />
-            <Typography.Paragraph style={{
-                marginTop: "40px",
-                fontWeight: "500",
-                fontSize: "14px",
-                lineHeight: "100%",
-                letterSpacing: "0%",
-                textAlign: "justify",
-                color: "white"
-
-            }}>
+            <Paragraph
+                style={{
+                    marginTop: 20,
+                    fontWeight: 500,
+                    fontSize: 14,
+                    textAlign: "start",
+                }}
+            >
                 {description}
-            </Typography.Paragraph>
+                <Link
+                    type="link"
+                    href={documentationUrl}
+                    target="_blank"
+                    style={{
+                        color: "#D85912", fontWeight: 500, textDecoration: "underline"
+                    }}
+                >
+                    {documentationLabel}
+                </Link>
+            </Paragraph>
         </Card>
     );
 }
