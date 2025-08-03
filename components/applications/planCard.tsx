@@ -33,13 +33,7 @@ export default function PlanCard({
     translations,
     showModal,
 }: Props) {
-    console.log('IS CUSTOM PLAN', isCustomPlan
-        , "translations", translations
-    );
-
-
     const { token } = theme.useToken()
-
     return (
         <Card
             onClick={() => onClick(id)}
