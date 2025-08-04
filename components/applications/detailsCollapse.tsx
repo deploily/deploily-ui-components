@@ -3,7 +3,7 @@ import { CaretDown, CaretUp } from "@phosphor-icons/react";
 import { Collapse, theme, Typography } from "antd";
 export interface CollapseItem {
     label: string,
-    children: string
+    children: React.ReactNode;
 }
 export default function DetailsCollapse({ items, style }: { items?: CollapseItem[] | undefined, style?: React.CSSProperties }) {
     const { token } = theme.useToken();
