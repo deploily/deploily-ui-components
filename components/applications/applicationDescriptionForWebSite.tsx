@@ -11,6 +11,7 @@ interface Props {
     avatar: React.ReactNode;
     documentationUrl: string;
     documentationLabel: string;
+
 }
 
 export default function ApplicationDescriptionForWebSite({
