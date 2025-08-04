@@ -1,5 +1,5 @@
 'use client';
-import { Card, Typography } from 'antd';
+import { Card, Col, Row, Space, Typography } from 'antd';
 import Link from 'next/link';
 
 const { Title, Text, Paragraph } = Typography;
@@ -23,51 +23,52 @@ export default function ApplicationDescriptionForWebSite({
 
 
     return (
-        <Card
-            style={{
-                background: 'transparent',
-                padding: '0px',
-                border: "none",
-                width: "100%",
-                color: '#fff',
-            }}
+        <Row gutter={[16, 24]} wrap style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+        }} >
+            <Col
+                xs={24} md={24} xl={4}
+                style={{ display: "flex", justifyContent: "start" }}
+            >
+                {avatar}
+            </Col>
 
-        >
-            <Meta
-                avatar={avatar}
-                style={{ alignContent: 'center', alignItems: "center" }}
-                title={<Text style={{
-                    fontWeight: 700,
-                    fontSize: "30px",
-                    lineHeight: "28px",
-                    letterSpacing: "0.01em",
-                    textAlign: 'center',
-                    color: "white"
-                }}>{title}
-                </Text>}
-
-
-            />
-            <Paragraph
+            <Col
+                xs={24}
+                md={24}
+                xl={20}
                 style={{
-                    marginTop: 20,
-                    fontWeight: 500,
-                    fontSize: 14,
-                    textAlign: "start",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "start",
                 }}
             >
-                {description}
-                <Link
-                    type="link"
-                    href={documentationUrl}
-                    target="_blank"
+                <Row justify={'space-between'}>
+                    <Text style={{ fontWeight: 700, fontSize: 24, lineHeight: "28px" }}>{title}</Text>
+                </Row>
+                <Paragraph
                     style={{
-                        color: "#D85912", fontWeight: 500, textDecoration: "underline"
+                        marginTop: 20,
+                        fontWeight: 500,
+                        fontSize: 14,
+                        textAlign: "justify",
                     }}
                 >
-                    {documentationLabel}
-                </Link>
-            </Paragraph>
-        </Card>
+                    {description}
+                    <Link
+                        type="link"
+                        href={documentationUrl}
+                        target="_blank"
+                        style={{
+                            color: "#D85912", fontWeight: 500, textDecoration: "underline"
+                        }}
+                    >
+                        {documentationLabel}
+                    </Link>
+                </Paragraph>
+            </Col>
+        </Row>
+
     );
 }

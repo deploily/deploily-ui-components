@@ -74,14 +74,14 @@ export  function PaymentAppBar({
         >
             <Card
                 style={{
-                    width: "100%",
+                    width: "90%",
                     maxWidth: 1000,
                     background: '#202227',
                     borderRadius: '10px',
                     border: "none",
                     color: 'white',
                 }}
-                bodyStyle={{ padding: 20 }}
+                bodyStyle={{ padding: 0 }}
             >
                 <div>
                     <PaymentDetails items={items} />
