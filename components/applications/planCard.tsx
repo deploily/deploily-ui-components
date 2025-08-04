@@ -41,11 +41,13 @@ export default function PlanCard({
                 display: "flex",
                 flexDirection: "column",
                 height: "100%",
+                minHeight: 290, 
+                maxHeight: 320, 
                 width: "100%",
                 borderColor: styles.color ?? 'grey',
                 boxShadow: styles.boxShadow,
-                minWidth: 220,
-                maxWidth: 300,
+                minWidth: 200,
+                maxWidth: 250,
             }}
             styles={{
                 body: { flex: 1, display: "flex", flexDirection: "column", paddingBottom: 0 },
@@ -110,7 +112,7 @@ export default function PlanCard({
                     width: "100%",
                     marginBottom: 20,
                     fontWeight: 600,
-                    fontSize: 20,
+                    fontSize: 16,
                 }}
             >
                 {translations["contactUs"]}
