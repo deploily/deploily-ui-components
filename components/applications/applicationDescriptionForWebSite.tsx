@@ -11,7 +11,7 @@ interface Props {
     avatar: React.ReactNode;
     documentationUrl: string;
     documentationLabel: string;
-
+  
 }
 
 export default function ApplicationDescriptionForWebSite({
@@ -29,7 +29,7 @@ export default function ApplicationDescriptionForWebSite({
             flexWrap: 'wrap',
         }} >
             <Col
-                xs={24} md={24} xl={4}
+                xs={24} md={24} xl={6}
                 style={{ display: "flex", justifyContent: "start" }}
             >
                 {avatar}
@@ -38,7 +38,7 @@ export default function ApplicationDescriptionForWebSite({
             <Col
                 xs={24}
                 md={24}
-                xl={20}
+                xl={18}
                 style={{
                     display: "flex",
                     flexDirection: "column",
