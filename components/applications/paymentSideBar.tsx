@@ -21,7 +21,7 @@ export default function PaymentSideBar({
     return (
         <Card
             style={{
-                maxWidth: "280px",
+                maxWidth: "300px",
                 background: '#202227',
                 borderRadius: '10px',
                 border: "none",

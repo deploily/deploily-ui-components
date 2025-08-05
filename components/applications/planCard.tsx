@@ -42,11 +42,11 @@ export default function PlanCard({
                 flexDirection: "column",
                 height: "100%",
                 minHeight: 290, 
-                maxHeight: 320, 
+                maxHeight: 400, 
                 width: "100%",
                 borderColor: styles.color ?? 'grey',
                 boxShadow: styles.boxShadow,
-                minWidth: 200,
+                minWidth: 220,
                 maxWidth: 250,
             }}
             styles={{
