@@ -1,6 +1,10 @@
 'use client';
 import { Button, Card, Divider, Typography } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
+import { Collapse } from "antd";
+import { CaretDown, CaretUp } from "@phosphor-icons/react";
+import { CaretRightOutlined } from "@ant-design/icons";
+const { Panel } = Collapse;
 
 const { Text } = Typography;
 const { Meta } = Card;
@@ -42,7 +46,7 @@ export default function PaymentSideBar({
                         type="primary"
                         size="large"
                         style={{
-                            boxShadow:"none",
+                            boxShadow: "none",
                             marginTop: 12,
                             backgroundColor: '#F47B20',
                             borderColor: '#F47B20',
@@ -60,9 +64,11 @@ export default function PaymentSideBar({
     );
 }
 
-export  function PaymentAppBar({
+export function PaymentAppBar({
     price, buttonText, items, onClick
 }: Props) {
+    const [activeKey, setActiveKey] = useState<number[]>([0]);
+
     return (
         <div
             style={{
@@ -84,8 +90,37 @@ export  function PaymentAppBar({
                 bodyStyle={{ padding: 0 }}
             >
                 <div>
-                    <PaymentDetails items={items} />
-
+                    <Collapse
+                        bordered={false}
+                        activeKey={activeKey}
+                        onChange={(keys) => setActiveKey((Array.isArray(keys) ? keys.map(Number) : [Number(keys)]))}
+                        expandIcon={() => null}
+                        items={[
+                            {
+                                key: 1,
+                                label: (
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                             height: 15,       
+                                           
+                                        }}
+                                    >
+                                        {activeKey.includes(1) ? (
+                                            <CaretUp size={28}  color="#F47B20" />
+                                        ) : (
+                                            <CaretDown size={28}  color="#F47B20" />
+                                        )}
+                                    </div>
+                                ),
+                                children: <div className="mt-4">
+                                    <PaymentDetails items={items} />
+                                </div>,
+                            },
+                        ]}
+                    />
                     <div style={{ textAlign: 'center' }}>
                         <Typography.Title level={2} style={{ color: '#F47B20', margin: 0 }}>
                             {price} <Text style={{ fontSize: 16, color: '#F47B20' }}>DZD</Text>
@@ -129,12 +164,12 @@ function PaymentDetails({ items }: {
                     {item.label}
                 </Text>
                 <div>
-                {
-                    React.isValidElement(item.value)? item.value :
-                        <Text style={{ fontSize: '14px', fontWeight: 700, color: "white", width: '100%' }}>
-                            {item.value}
-                        </Text>
-                }
+                    {
+                        React.isValidElement(item.value) ? item.value :
+                            <Text style={{ fontSize: '14px', fontWeight: 700, color: "white", width: '100%' }}>
+                                {item.value}
+                            </Text>
+                    }
                 </div>
             </div>
         )}

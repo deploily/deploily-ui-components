@@ -20,21 +20,33 @@ export default function TableComponentWithSelection({ selectedRowId, data, colum
 
     return (
         <div>
+            <style>
+                {`
+                    .myTable .selected-row:hover td {
+                        background-color: transparent !important;
+                    }
+                `}
+            </style>
+
             <Table<any>
-                className={"myTable"}
+                className="myTable"
                 rowSelection={{
                     type: "radio",
                     onChange: (newSelectedRowKeys: React.Key[]) => {
                         setSelectedRowKeys(newSelectedRowKeys);
                         onChange(newSelectedRowKeys[0]);
                     },
-                    selectedRowKeys
+                    selectedRowKeys,
                 }}
+                rowClassName={(record) =>
+                    selectedRowKeys.includes(record.key) ? "selected-row" : ""
+                }
                 scroll={{ x: 730, y: 400 }}
                 pagination={false}
                 columns={columns}
                 dataSource={data}
-            /></div>
+            />
+        </div>
 
     );
 };
