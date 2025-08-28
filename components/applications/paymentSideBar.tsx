@@ -109,9 +109,9 @@ export function PaymentAppBar({
                                         }}
                                     >
                                         {activeKey.includes(1) ? (
-                                            <CaretUp size={28}  color="#F47B20" />
-                                        ) : (
                                             <CaretDown size={28}  color="#F47B20" />
+                                        ) : (
+                                            <CaretUp size={28}  color="#F47B20" />
                                         )}
                                     </div>
                                 ),
