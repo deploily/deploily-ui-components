@@ -39,7 +39,7 @@ export default function PaymentSideBar({
 
                 <div style={{ textAlign: 'center' }}>
                     <Typography.Title level={2} style={{ color: '#F47B20', margin: 0 }}>
-                        {price} <Text style={{ fontSize: 16, color: '#F47B20', }}>DZD</Text>
+                        {Intl.NumberFormat("fr-FR", { useGrouping: true }).format(price)} <Text style={{ fontSize: 16, color: '#F47B20', }}>DZD</Text>
                     </Typography.Title>
 
                     <Button
@@ -123,7 +123,7 @@ export function PaymentAppBar({
                     />
                     <div style={{ textAlign: 'center' }}>
                         <Typography.Title level={2} style={{ color: '#F47B20', margin: 0 }}>
-                            {price} <Text style={{ fontSize: 16, color: '#F47B20' }}>DZD</Text>
+                            {Intl.NumberFormat("fr-FR", { useGrouping: true }).format(price)} <Text style={{ fontSize: 16, color: '#F47B20' }}>DZD</Text>
                         </Typography.Title>
 
                         <Button
