@@ -52,7 +52,7 @@ export default function ApplicationDescriptionForWebSite({
                     style={{
                         marginTop: 20,
                         fontWeight: 500,
-                        fontSize: 14,
+                        fontSize: 16,
                         textAlign: "justify",
                     }}
                 >
