@@ -30,7 +30,7 @@ export default function ApplicationDescriptionForWebSite({
         }} >
             <Col
                 xs={24} md={6} xl={6}
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{ display: "flex", justifyContent: "center",marginRight:"20px" }}
             >
                 {avatar}
             </Col>
@@ -42,8 +42,7 @@ export default function ApplicationDescriptionForWebSite({
                 style={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "center",
-                    marginLeft:"20px"
+                    justifyContent: "center"
                 }}
             >
                 <Row justify={'space-between'}>
