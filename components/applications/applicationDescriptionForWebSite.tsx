@@ -29,20 +29,21 @@ export default function ApplicationDescriptionForWebSite({
             flexWrap: 'wrap',
         }} >
             <Col
-                xs={24} md={24} xl={6}
-                style={{ display: "flex", justifyContent: "start" }}
+                xs={24} md={6} xl={6}
+                style={{ display: "flex", justifyContent: "center" }}
             >
                 {avatar}
             </Col>
 
             <Col
                 xs={24}
-                md={24}
-                xl={18}
+                md={16}
+                xl={16}
                 style={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "start",
+                    justifyContent: "center",
+                    marginLeft:"20px"
                 }}
             >
                 <Row justify={'space-between'}>
