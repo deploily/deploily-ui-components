@@ -1,5 +1,5 @@
 import { Table } from 'antd';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './TableDesign.module.css';
 export interface Column {
     title: string;
@@ -17,6 +17,12 @@ export default function TableComponentWithSelection({ selectedRowId, data, colum
         onChange: (value: any) => void
     }) {
     const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>(selectedRowId ? [selectedRowId] : []);
+    
+     useEffect(() => {
+        if (selectedRowId !== undefined && selectedRowKeys[0] !== selectedRowId) {
+            setSelectedRowKeys([selectedRowId]);
+        }
+    }, [selectedRowId]);
 
     return (
         <div>
