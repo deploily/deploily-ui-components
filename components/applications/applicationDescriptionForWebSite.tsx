@@ -63,48 +63,6 @@ export default function ApplicationDescriptionForWebSite({
                     {description}
                    
                 </Paragraph>
-                <div style={{ display: 'flex', gap: '10px', marginTop: 10, flexWrap:"wrap" }}>
-                    <Button
-                        type="primary"
-                        href={documentationUrl}
-                        target="_blank"
-                        style={{
-                            backgroundColor: "#0057D8",
-                            border: "none",
-                            boxShadow: "none"
-                        }}
-                    >
-                        <span
-                            style={{
-                                color: "white",
-                                fontSize: "16px",
-                                fontWeight: 600,
-                            }}
-                        >
-                            {documentationLabel}
-                        </span>
-                    </Button>
-                    <Button
-                        type="primary"
-                        href={demoUrl}
-                        target="_blank"
-                        style={{
-                            backgroundColor: "#0057D8",
-                            border: "none",
-                            boxShadow: "none"
-                        }}
-                    >
-                        <span
-                            style={{
-                                color: "white",
-                                fontSize: "16px",
-                                fontWeight: 600,
-                            }}
-                        >
-                            {demoLabel}
-                        </span>
-                    </Button>
-                </div>
             </Col>
         </Row>
 
