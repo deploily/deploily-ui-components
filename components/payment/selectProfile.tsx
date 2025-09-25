@@ -2,14 +2,18 @@
 import { Coins } from "@phosphor-icons/react";
 import { ConfigProvider, Divider, Select, Typography } from "antd";
 
-export default function SelectProfileComponent({ translations, selectedProfile, paymentProfilesList, onSelectProfile}:
-    { translations: { title: string, profile: string, balance: string,  }, selectedProfile: any, paymentProfilesList: any,
-     onSelectProfile: (value: any) => void}) {
+export default function SelectProfileComponent({ translations, selectedProfile, paymentProfilesList, onSelectProfile }:
+    {
+        translations: { title: string, profile: string, balance: string, }, selectedProfile: any, paymentProfilesList: any,
+        onSelectProfile: (value: any) => void
+    }) {
+    console.log(selectedProfile, "00000000000000000000000");
+
     const { Option } = Select;
     return (
         <>
             {<>
-                <Typography.Title level={4} style={{ paddingTop: 30, paddingBottom: 20,color:"white" }}>{translations.title}</Typography.Title>
+                <Typography.Title level={4} style={{ paddingTop: 30, paddingBottom: 20, color: "white" }}>{translations.title}</Typography.Title>
                 <ConfigProvider theme={{
                     components: {
                         Select: {
@@ -52,7 +56,7 @@ export default function SelectProfileComponent({ translations, selectedProfile, 
                     >
                         {(
                             <>
-                                {(paymentProfilesList?.result).map((profile:any, index:number) => (
+                                {(paymentProfilesList?.result).map((profile: any, index: number) => (
                                     <Option key={index} value={profile.id}>
                                         <div style={{
                                             display: "flex",
@@ -66,7 +70,7 @@ export default function SelectProfileComponent({ translations, selectedProfile, 
 
                                             <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
                                                 <span style={{ color: "#D85912" }}>DZD</span>
-                                                <Coins size={24} color="#D85912"/>
+                                                <Coins size={24} color="#D85912" />
                                             </div>
                                         </div>
                                     </Option>
