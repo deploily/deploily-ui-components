@@ -7,7 +7,6 @@ export default function SelectProfileComponent({ translations, selectedProfile, 
         translations: { title: string, profile: string, balance: string, }, selectedProfile: any, paymentProfilesList: any,
         onSelectProfile: (value: any) => void
     }) {
-    console.log(selectedProfile, "00000000000000000000000");
 
     const { Option } = Select;
     return (
