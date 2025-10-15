@@ -5,10 +5,11 @@ import './TableDesign.module.css';
 export interface Column {
     title: string;
     dataIndex: string;
-    render?: (text: any) => React.ReactNode;
+    render?: (text: any, record?: any, index?: number) => React.ReactNode; // allow 2+ args
     fixed?: 'left' | 'right';
     width?: number | string;
 }
+
 
 export default function TableComponentWithSelection({
     selectedRowId,
@@ -16,10 +17,10 @@ export default function TableComponentWithSelection({
     columns,
     onChange,
 }: {
-    selectedRowId: number | undefined;
-    data: any[];
-    columns: Column[];
-    onChange: (value: any) => void;
+        selectedRowId: string | number | undefined; // ✅ allow string OR number
+        data: any[];
+        columns: Column[];
+        onChange: (value: string | number) => void; // ✅ allow string OR number
 }) {
     const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>(
         selectedRowId ? [selectedRowId] : []
@@ -74,11 +75,12 @@ export default function TableComponentWithSelection({
                 rowSelection={{
                     type: 'radio',
                     onChange: (newSelectedRowKeys: React.Key[]) => {
-                        setSelectedRowKeys(newSelectedRowKeys);
-                        onChange(newSelectedRowKeys[0]);
+                        setSelectedRowKeys(newSelectedRowKeys as string[]);
+                        onChange(newSelectedRowKeys[0] as string);
                     },
                     selectedRowKeys,
                 }}
+
                 rowClassName={(record) =>
                     selectedRowKeys.includes(record.key) ? 'selected-row' : ''
                 }
