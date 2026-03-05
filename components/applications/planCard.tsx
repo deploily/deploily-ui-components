@@ -40,17 +40,15 @@ export default function PlanCard({
             style={{
                 display: "flex",
                 flexDirection: "column",
-                height: "100%",
-                minHeight: 360, 
-                maxHeight: 500, 
+                height: "100%",      // ← fills parent height
                 width: "100%",
                 borderColor: styles.color ?? 'grey',
                 boxShadow: styles.boxShadow,
                 minWidth: 220,
-                maxWidth: 250,
+                // remove minHeight and maxHeight
             }}
             styles={{
-                body: { flex: 1, display: "flex", flexDirection: "column", paddingBottom: 0 },
+                body: { height: "100%", flex: 1, display: "flex", flexDirection: "column", paddingBottom: 0 },
             }}
         >
 
