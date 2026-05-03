@@ -43,7 +43,7 @@ export interface NewSubscriptionInfoInterface {
     };
 }
 
-export default function NewSubscriptionInfo({ title, newSubscriptionInfo }: { title: string, newSubscriptionInfo: NewSubscriptionInfoInterface }) {
+export default function NewSubscriptionInfo({ title, newSubscriptionInfo ,byor}: { title: string, newSubscriptionInfo: NewSubscriptionInfoInterface  , byor?:boolean}) {
 
     return (
         <>
@@ -70,18 +70,21 @@ export default function NewSubscriptionInfo({ title, newSubscriptionInfo }: { ti
                     <Row gutter={16} align="top" >
                         <Item label={newSubscriptionInfo.version.label} value={newSubscriptionInfo.version.value} />
                     </Row>
-                    <Row gutter={16} align="top" >
-                        <Item label={newSubscriptionInfo.providerName.label} value={newSubscriptionInfo.providerName.value} />
-                    </Row>
-                    <Row gutter={16} align="top" >
-                        <Item label={newSubscriptionInfo.resourceType.label} value={newSubscriptionInfo.resourceType.value} />
-                    </Row>
-                    <Row gutter={16} align="top" >
-                        <Item label={newSubscriptionInfo.resourcePlanOptions.label} value={newSubscriptionInfo.resourcePlanOptions.value} />
-                    </Row>  
-                    <Row gutter={16} align="top" >
-                        <Item label={newSubscriptionInfo.prepaTime.label} value={newSubscriptionInfo.prepaTime.value} />
-                    </Row> 
+                    {!byor && <>
+                        <Row gutter={16} align="top" >
+                            <Item label={newSubscriptionInfo.providerName.label} value={newSubscriptionInfo.providerName.value} />
+                        </Row>
+                        <Row gutter={16} align="top" >
+                            <Item label={newSubscriptionInfo.resourceType.label} value={newSubscriptionInfo.resourceType.value} />
+                        </Row>
+                        <Row gutter={16} align="top" >
+                            <Item label={newSubscriptionInfo.resourcePlanOptions.label} value={newSubscriptionInfo.resourcePlanOptions.value} />
+                        </Row>  
+                        <Row gutter={16} align="top" >
+                            <Item label={newSubscriptionInfo.prepaTime.label} value={newSubscriptionInfo.prepaTime.value} />
+                        </Row>
+                    </>
+                    }
                     {newSubscriptionInfo.promoCode &&<Row gutter={16} align="top" >
                         <Item label={newSubscriptionInfo.promoCode.label} value={newSubscriptionInfo.promoCode.value} />
                     </Row>}
