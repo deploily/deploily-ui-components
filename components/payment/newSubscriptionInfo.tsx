@@ -14,7 +14,7 @@ export interface NewSubscriptionInfoInterface {
         label: string;
         value: string
     };
-    version: {
+    version?: {
         label: string;
         value: string
     };
@@ -67,9 +67,9 @@ export default function NewSubscriptionInfo({ title, newSubscriptionInfo ,byor}:
                     <Row gutter={16} align="top" >
                         <Item label={newSubscriptionInfo.duration.label} value={newSubscriptionInfo.duration.value} />
                     </Row>
-                    <Row gutter={16} align="top" >
+                    {newSubscriptionInfo.version &&<Row gutter={16} align="top" >
                         <Item label={newSubscriptionInfo.version.label} value={newSubscriptionInfo.version.value} />
-                    </Row>
+                    </Row>}
                     {!byor && <>
                         <Row gutter={16} align="top" >
                             <Item label={newSubscriptionInfo.providerName.label} value={newSubscriptionInfo.providerName.value} />
