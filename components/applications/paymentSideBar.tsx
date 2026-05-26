@@ -31,7 +31,7 @@ export default function PaymentSideBar({
                 border: "none",
                 color: 'white',
             }}
-            bodyStyle={{ padding: 20 }}
+            styles={{ body: { padding: 20 }}}
         >
             <div style={{ color: '#ffffff' }}>
                 <PaymentDetails items={items} />
@@ -87,7 +87,7 @@ export function PaymentAppBar({
                     border: "none",
                     color: 'white',
                 }}
-                bodyStyle={{ padding: 0 }}
+                styles={{ body: { padding: 0 }}}
             >
                 <div>
                     <Collapse
