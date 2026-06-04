@@ -17,6 +17,7 @@ export interface Props {
     showModal: any;
     styles: any;
     isCustomPlan: boolean;
+    isTrialPlan?: boolean;
     customPlanSelected?: boolean;
     translations: any;
 }
@@ -29,6 +30,7 @@ export default function PlanCard({
     options,
     onClick,
     isCustomPlan,
+    isTrialPlan,
     customPlanSelected,
     translations,
     showModal,
@@ -62,6 +64,9 @@ export default function PlanCard({
                 >
                     {translations["onDemand"]}
                 </Typography.Paragraph> :
+                isTrialPlan ?
+                 <></>
+                :
                 <Typography.Paragraph
                     style={{ fontSize: 25, fontWeight: 600, textAlign: "center", color: token.colorPrimary }}
                 >
